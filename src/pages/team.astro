@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: "Abhishek Kumar",
+    title: "Co-founder",
+    education: "GMP - Harvard Business School, BTech - IIT Kanpur",
+    experience: "Executive Chairman of Anuva, Ex-Founder of Ioaln",
+    imageUrl: "/path/to/abhishek-image.jpg"
+  },
+  {
+    name: "Nish Shah",
+    title: "Co-founder",
+    education: "B.S. - Cornell University, NY",
+    experience: "Head of Business Development at Netcan Capital, Global Co-Head of the Netcan group",
+    imageUrl: "/path/to/nish-image.jpg"
+  },
+  {
+    name: "Ashish Sarkar",
+    title: "Partner",
+    education: "MBA - Queen’s University, Canada; BTech - IIT Kanpur",
+    experience: "Partner at KPMG UK, Leading KPMG’s global strategy services",
+    imageUrl: "/path/to/ashish-image.jpg"
+  },
+  {
+    name: "Subhashis Banerjee",
+    title: "Partner, Operating",
+    education: "MBA - IIM Calcutta, BTech - IIT Kanpur",
+    experience: "Ex-Co-founder of AI Foundry, COO at ARTPARK",
+    imageUrl: "/path/to/subhashis-image.jpg"
+  },
+  {
+    name: "Umakant Soni",
+    title: "Partner, Ventures",
+    education: "BTech - IIT Kanpur",
+    experience: "Ex-Co-founder of AI Foundry, CEO at ARTPARK",
+    imageUrl: "/path/to/umakant-image.jpg"
+  },
+  {
+    name: "Pulkit Agrawal",
+    title: "Partner, Technology",
+    education: "MBA - Queen’s University, Canada; BTech - IIT Kanpur",
+    experience: "Assistant Professor at MIT, Co-founder of SafetyYou Inc.",
+    imageUrl: "/path/to/pulkit-image.jpg"
+  },
+];
+---
+
+<Layout>
+  <div class="team-page">
+    <h1 class="team-heading">Our Amazing Team</h1>
+    <div class="team-members">
+      {teamMembers.map(member => (
+        <div class="team-member">
+          <img src={member.imageUrl} alt={member.name} class="member-photo" />
+          <h2 class="member-name">{member.name}</h2>
+          <h3 class="member-title">{member.title}</h3>
+          <p class="member-education">{member.education}</p>
+          <p class="member-experience">{member.experience}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <style>
+  .team-page {
+    text-align: center;
+  }
+
+  .team-heading {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-member {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 0.5em;
+    width: 200px;
+    transition: background-color 0.3s ease;
+  }
+
+  .team-member:hover {
+    background-color: #005b96;
+    color: white;
+  }
+
+  .member-photo {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .member-name {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+  }
+
+  .member-title {
+    font-size: 1em;
+    color: #555;
+  }
+
+  .member-education,
+  .member-experience {
+    font-size: 0.9em;
+    color: #777;
+  }
+  </style>
+</Layout>

@@ -1,9 +1,64 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-	</main>
-</Layout>
+<Layout>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+    .text-custom {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.2rem; /* Increased font size for better readability */
+      line-height: 3rem; /* Increased line height for better readability */
+    }
+
+    .highlight {
+      background-color: rgba(0, 0, 255, 0.5); /* Light orange background */
+      font-weight: 400;
+    }
+
+    .header-color {
+      color: #b0b0b0;
+      font-size: 2.5rem; /* Increased header font size */
+      margin-top: 100px;
+    }
+
+    .content-container {
+      width: 75%; /* 3/4 width of the screen */
+      margin-left: 7%; /* Center the container */
+    }
+  </style>
+
+  <section class="relative py-12 text-white text-custom">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
+      <source src="/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="absolute inset-0 bg-black opacity-25"></div>
+    <div class="relative container px-4 content-container">
+      <h1 class="text-4xl font-bold mb-6 header-color">About 1950 Ventures</h1>
+      <p class="mb-8">
+        At 1950 Ventures, we seek to generate outstanding returns by <span class="highlight">Investing</span>, <span class="highlight">Incubating</span>, and <span class="highlight">Indorsing AI-first companies</span> building the "Intelligence Economy". We believe in <span class="highlight">connecting entrepreneurs, engineers, industry experts, executives, and investors</span>, bringing the collective power of the network to harness the incredible potential of artificial intelligence.
+      </p>
+      <p class="mb-8">
+        We have unparalleled access to startups in India, as our previous experience founding ART PARK and AI Foundry with support from the Government of India has provided deep penetration in the startup ecosystem in the country. The founding team has <span class="highlight">125+ years of experience</span> in underwriting technology and mentoring businesses globally. We have co-founded, incubated, and invested in <span class="highlight">15+ AI and robotics companies</span>.
+      </p>
+      <p class="mb-8">
+        Our current pipeline has qualified AI-first startups for over <span class="highlight">$100 million investment</span>.
+      </p>
+      <h2 class="text-3xl font-bold mb-4 header-color">India: a unique AI opportunity</h2>
+      <p class="mb-8">
+        Despite global economic uncertainties, India's growth outlook remains robust, with GDP growth projected to stay at <span class="highlight">7%</span> in the coming years. This growth is fueled by strong domestic consumption, ongoing structural reforms, and a vibrant services sector. India continues to attract significant foreign investment, underpinned by its young workforce, expanding digital infrastructure, and the government's focus on infrastructure development, and improving ease of doing business.
+      </p>
+      <p class="mb-8">
+        India is home to <span class="highlight">2000+ AI-led startups</span> and is among the top countries for AI talent. Moreover, the digital public infrastructure in the country (e.g. Digital Identity, Payments) is leading the world, providing the foundational technology stack that enables next-gen AI applications. Government policies and regulations are increasingly focused on nurturing local talent, promoting education, and conducive to the implementation and adoption of AI solutions.
+      </p>
+      <p>
+        We believe in the India story. We see its potential to be a world leader in AI.
+      </p>
+    </div>
+  </section>
+</Layout>

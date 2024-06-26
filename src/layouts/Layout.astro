@@ -1,5 +1,8 @@
 ---
-import Header from './components/Header';
+import Header from './Header.astro';
+import Footer from './components/Footer.astro';
+import Team from '../components/Team.astro';
+
 
 interface Props {
 	title: string;
@@ -15,12 +18,16 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/src/styles/tailwind.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Header />
+		<main class="flex-grow">
 		<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 <style is:global>

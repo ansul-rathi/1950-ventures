@@ -1,0 +1,10 @@
+/* src/styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animation for Background */
+.animated-bg {
+  background: url("/animated-background.svg") no-repeat center center fixed;
+  background-size: cover;
+}
