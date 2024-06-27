@@ -1,6 +1,7 @@
-// tailwind.config.js
-export const content = ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue}"];
-export const theme = {
-  extend: {},
+export default {
+  content: ["./src/**/*.{astro,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 };
-export const plugins = [];

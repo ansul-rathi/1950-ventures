@@ -4,106 +4,31 @@ import Layout from '../layouts/Layout.astro';
 
 ---
 
-<Layout title="About">
+<Layout title="Home">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
     .text-custom {
       font-family: 'Poppins', sans-serif;
       font-weight: 300;
-      font-size: 1.2rem;
-      line-height: 1.6rem;
+      font-size: 1.2rem; /* Increased font size for better readability */
+      line-height: 3rem; /* Increased line height for better readability */
     }
 
     .highlight {
-      background-color: rgba(0, 0, 255, 0.5);
+      background-color: rgba(0, 0, 255, 0.5); /* Light orange background */
       font-weight: 400;
     }
 
     .header-color {
       color: #b0b0b0;
-      font-size: 2.5rem;
+      font-size: 2.5rem; /* Increased header font size */
       margin-top: 100px;
     }
 
     .content-container {
-      width: 75%;
-      margin: 0 auto;
-    }
-
-    .relative {
-      position: relative;
-    }
-
-    .absolute {
-      position: absolute;
-    }
-
-    .inset-0 {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    .w-full {
-      width: 100%;
-    }
-
-    .h-full {
-      height: 100%;
-    }
-
-    .object-cover {
-      object-fit: cover;
-    }
-
-    .bg-black {
-      background-color: black;
-    }
-
-    .opacity-25 {
-      opacity: 0.25;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .px-4 {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .py-12 {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-
-    .text-white {
-      color: white;
-    }
-
-    .font-bold {
-      font-weight: bold;
-    }
-
-    .mb-6 {
-      margin-bottom: 1.5rem;
-    }
-
-    .mb-8 {
-      margin-bottom: 2rem;
-    }
-
-    .text-4xl {
-      font-size: 2.25rem;
-    }
-
-    .text-3xl {
-      font-size: 1.875rem;
+      width: 75%; /* 3/4 width of the screen */
+      margin-left: 7%; /* Center the container */
     }
   </style>
 
