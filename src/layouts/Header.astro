@@ -2,27 +2,70 @@
 // src/components/Header.astro
 ---
 
-<header class="bg-black text-white fixed top-0 left-0 w-full z-50">
-  <div class="container mx-auto flex justify-between items-center p-4">
+<header class="header">
+  <div class="container">
     <a href="/">
-      <img src="/1950venture-logo.png" alt="1950 Ventures Logo" class="h-10" />
+      <img src="/1950venture-logo.png" alt="1950 Ventures Logo" class="logo" />
     </a>
-    <nav class="flex space-x-2">
+    <nav class="nav">
       <a href="/contact">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 11 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
         </svg>
       </a>
-      <a href="/contact" class="text-gray-300 hover:text-white">
+      <a href="/contact" class="contact-link">
         Contact Us
       </a>
     </nav>
   </div>
-  <div class="scroll-line bg-blue-500 absolute bottom-0 left-0 h-1" style="width: 0;"></div>
+  <div class="scroll-line"></div>
 </header>
 
 <style>
+  .header {
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    color: #b0b0b0;
+    text-decoration: none;
+  }
+
+  .contact-link:hover {
+    color: white;
+  }
+
   .scroll-line {
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.25rem;
+    width: 0;
     transition: width 0.1s ease;
   }
 </style>
