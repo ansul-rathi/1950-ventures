@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+header,
+footer {
+  background-color: black;
+  color: white;
+}
+
+header a,
+footer a {
+  color: #b0b0b0;
+  text-decoration: none;
+}
+
+header a:hover,
+footer a:hover {
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .lg\\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\\:space-y-0 > * + * {
+    margin-top: 0;
+  }
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
