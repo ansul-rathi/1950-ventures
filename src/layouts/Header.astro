@@ -31,9 +31,11 @@
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', () => {
       const scrollLine = document.querySelector('.scroll-line') as HTMLElement;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (window.scrollY / docHeight) * 100;
-      scrollLine.style.width = `${scrolled}%`;
+      if (scrollLine) {
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / docHeight) * 100;
+        scrollLine.style.width = `${scrolled}%`;
+      }
     });
   }
 </script>
