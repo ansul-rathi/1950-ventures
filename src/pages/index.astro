@@ -1,4 +1,5 @@
 ---
+import Container from '../components/Container.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -77,7 +78,8 @@ import Layout from '../layouts/Layout.astro';
 
   <section class="relative py-12 text-white text-custom parallax">
     <div class="overlay"></div>
-    <div class="relative container px-4 content-container">
+    <Container size='lg'>
+    <div class="relative ">
       <h1 class="text-xs  mb-2 header-color animated-text">#About us</h1>
       <p class="mb-8 animated-text">
         At 1950 Ventures, we seek to generate outstanding returns by <span class="highlight">Investing</span>, <span class="highlight">Incubating</span>, and <span class="highlight">Endorsing AI-first companies</span> building the "Intelligence Economy". We believe in <span class="highlight">connecting entrepreneurs, engineers, industry experts, executives, and investors</span>, bringing the collective power of the network to harness the incredible potential of artificial intelligence.
@@ -99,5 +101,6 @@ import Layout from '../layouts/Layout.astro';
         We believe in the India story. We see its potential to be a world leader in AI.
       </p>
     </div>
+  </Container>
   </section>
 </Layout>

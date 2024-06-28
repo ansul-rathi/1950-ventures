@@ -2,69 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-}
 
-header,
-footer {
+html {
+  overflow-y: scroll;
+  color-scheme: dark;
   background-color: black;
-  color: white;
+  font-family: "Atkinson", sans-serif;
+  
 }
 
-header a,
-footer a {
-  color: #b0b0b0;
-  text-decoration: none;
+html.dark {
+  color-scheme: dark;
+  background-color: black;
 }
 
-header a:hover,
-footer a:hover {
-  color: white;
+html,
+body {
+  @apply h-full w-full antialiased;
+  @apply bg-white dark:bg-black;
+  @apply text-black/75 dark:text-white/75;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+body {
+  @apply relative flex flex-col;
 }
 
-.flex {
-  display: flex;
+main {
+  @apply flex flex-col flex-1 bg-white dark:bg-black;
 }
 
-.flex-col {
-  flex-direction: column;
+header {
+  @apply border-b;
+  @apply transition-all duration-300 ease-in-out;
 }
 
-.flex-row {
-  flex-direction: row;
+header:not(.scrolled) {
+  @apply bg-transparent border-transparent;
 }
 
-.justify-between {
-  justify-content: space-between;
+header.scrolled {
+  @apply bg-white/75 dark:bg-black/50;
+  @apply border-black/10 dark:border-white/25;
+  @apply backdrop-blur-sm saturate-200;
 }
 
-.items-center {
-  align-items: center;
+.page-heading {
+  @apply font-semibold text-black dark:text-white;
 }
 
-.space-y-4 > * + * {
-  margin-top: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .lg\\:flex-row {
-    flex-direction: row;
-  }
-
-  .lg\\:space-y-0 > * + * {
-    margin-top: 0;
-  }
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.blend {
+  @apply transition-all duration-300 ease-in-out;
 }
