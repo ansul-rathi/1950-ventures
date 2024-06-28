@@ -1,20 +1,18 @@
 ---
-// src/components/Header.astro
+//import Layout from '../layouts/Layout.astro';
 ---
 
-<header class="bg-black text-white fixed top-0 left-0 w-full z-50">
+<header id="main-header" class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow transition-colors duration-300">
   <div class="container mx-auto flex justify-between items-center p-4">
     <a href="/">
       <img src="/1950venture-logo.png" alt="1950 Ventures Logo" class="h-10" />
     </a>
-    <nav class="flex space-x-2">
-      <a href="/contact">
+    <nav class="flex space-x-2 items-center">
+      <a href="/contact" class="flex items-center space-x-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
-          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 11 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.16 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.27 1.12.28 2.33.43 3.57.43.55 0 1 .45 1 1v3.5c0 .55-.45 1-1 1C9.72 21 3 14.28 3 6.5 3 5.95 3.45 5.5 4 5.5H7.5c.55 0 1 .45 1 1 0 1.24.15 2.45.43 3.57.09.35 0 .74-.27 1.02l-2.2 2.2z"/>
         </svg>
-      </a>
-      <a href="/contact" class="text-gray-300 hover:text-white">
-        Contact Us
+        <span class="text-gray-300 hover:text-white hidden md:inline">Contact Us</span>
       </a>
     </nav>
   </div>
@@ -22,8 +20,18 @@
 </header>
 
 <style>
+  .shadow {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+  }
+
   .scroll-line {
     transition: width 0.1s ease;
+  }
+
+  @media (max-width: 768px) {
+    .md\:inline {
+      display: none;
+    }
   }
 </style>
 
