@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html {
   overflow-y: scroll;
   color-scheme: dark;
   background-color: black;
-  font-family: "Atkinson", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 html.dark {
@@ -19,7 +22,12 @@ body {
   @apply h-full w-full antialiased;
   @apply bg-white dark:bg-black;
   @apply text-black/75 dark:text-white/75;
-  font-family: "Raleway Variable", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient( -54deg, #190230 -23%, #442288, #190230 51% );
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {
