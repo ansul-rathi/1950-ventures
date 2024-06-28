@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   overflow-y: scroll;
   color-scheme: dark;
   background-color: black;
   font-family: "Atkinson", sans-serif;
-  
 }
 
 html.dark {
@@ -21,6 +19,7 @@ body {
   @apply h-full w-full antialiased;
   @apply bg-white dark:bg-black;
   @apply text-black/75 dark:text-white/75;
+  font-family: "Raleway Variable", sans-serif;
 }
 
 body {
