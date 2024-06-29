@@ -5,7 +5,6 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="About">
   <style>
-
     .text-custom {
       font-weight: 200;
       /* font-size: 1.2rem; */
@@ -47,6 +46,7 @@ import Layout from "../layouts/Layout.astro";
     /* Parallax effect */
     .parallax {
       background: linear-gradient( -54deg, #190230 -23%, #442288, #190230 51% );
+      /* background-image: url("/background.jpeg"); */
       height: 100%;
       background-attachment: fixed;
       background-position: center;
@@ -54,6 +54,11 @@ import Layout from "../layouts/Layout.astro";
       background-size: cover;
       overflow: hidden;
       animation: zoom-in-out 30s ease-in-out infinite;
+    }
+    @media (max-width: 768px) {
+      .parallax {
+        animation: none; /* Disable animation on mobile */
+      }
     }
 
     @keyframes zoom-in-out {
@@ -66,12 +71,13 @@ import Layout from "../layouts/Layout.astro";
       100% {
         transform: scale(1) rotateX(0) rotateY(0) rotate(0);
       } */
-      0%, 100% {
-    background-size: 100%;
-  }
-  50% {
-    background-size: 110%;
-  }
+      0%,
+      100% {
+        background-size: 100%;
+      }
+      50% {
+        background-size: 110%;
+      }
     }
 
     .overlay {
@@ -97,8 +103,10 @@ import Layout from "../layouts/Layout.astro";
     <div class="overlay"></div>
     <Container size="lg">
       <div class="relative">
-        <h1 class="text-xs mb-2 header-color animated-text">#About us</h1>
-        <p class="mb-8 animated-text md:text-[32px] text-[24px]" >
+        <h1 class="text-xs mb-2 header-color animated-text">
+          <span class="highlight text-white !font-bold">#About us</span>
+        </h1>
+        <p class="mb-8 animated-text md:text-[32px] text-[24px]">
           At 1950 Ventures, we seek to generate outstanding returns by <span
             class="highlight">Investing</span
           >, <span class="highlight">Incubating</span>, and <span
@@ -126,10 +134,15 @@ import Layout from "../layouts/Layout.astro";
             class="highlight">$100 million investment</span
           >.
         </p>
-        <h2 class="text-3xl mb-2 header-color animated-text">
-          #India: a unique AI opportunity
+
+        <h2 class="text-xs mb-2 header-color animated-text">
+          <span class="highlight !font-bold text-white">
+            #India: a unique AI opportunity</span>
         </h2>
-        <p class="mb-8 md:text-[32px] text-[24px] md:text-[32px] text-[24px] animated-text">
+
+        <p
+          class="mb-8 md:text-[32px] text-[24px] md:text-[32px] text-[24px] animated-text"
+        >
           Despite global economic uncertainties, India's growth outlook remains
           robust, with GDP growth projected to stay at <span class="highlight"
             >7%</span
