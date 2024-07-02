@@ -8,57 +8,70 @@ interface Props {
   title: string;
 }
 
-// const { title } = Astro.props;
 const title = "1954 Ventures";
 const description = "Venture";
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <BaseHead title={`${title}`} description={description} />
-    <!-- <meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="/src/styles/tailwind.css">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title> -->
+    <link rel="stylesheet" href="/src/styles/tailwind.css">
   </head>
-  <body>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
     <Header />
     <main>
-        <slot />
+      <slot />
     </main>
     <Footer />
-  </body><style is:global>
-    :root {
-      --accent: 136, 58, 234;
-      --accent-light: 224, 204, 250;
-      --accent-dark: 49, 10, 101;
-      --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-      );
-    }
-    html {
-      font-family: system-ui, sans-serif;
-      /* background: #13151a; */
-      background-size: 224px;
-      background-color: black;
-    }
-    code {
-      font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
-    }
-  </style>
+
+    <button id="theme-toggle" class="fixed bottom-4 right-4 p-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black">Toggle Theme</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          const newTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+          localStorage.setItem('theme', newTheme);
+        });
+      });
+    </script>
+    <style is:global>
+      :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background-size: 224px;
+        background-color: white;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+    </style>
+  </body>
 </html>

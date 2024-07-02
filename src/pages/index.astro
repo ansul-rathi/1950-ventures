@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
     .text-custom {
       font-weight: 200;
       /* font-size: 1.2rem; */
-      /* line-height: 2.5rem; */
+    /* line-height: 2.5rem; */
     }
 
     .highlight {
@@ -44,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     /* Parallax effect */
-    /* .parallax {
+     .parallax {
       background-image: url("/background.jpeg");
       height: 100%;
       background-attachment: fixed;
@@ -53,19 +53,10 @@ import Layout from "../layouts/Layout.astro";
       background-size: cover;
       overflow: hidden;
       animation: zoom-in-out 30s ease-in-out infinite;
-    } */
+    } 
 
-    .parallax {
-        height: 100%;
-        /* background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover; */
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-      .parallax::before {
+
+ /*     .parallax::before {
         content: "";
         position: absolute;
         top: 0;
@@ -77,8 +68,7 @@ import Layout from "../layouts/Layout.astro";
         filter: grayscale(50%);
         z-index: -1;
         background-image: url("/background.jpeg");
-
-      }
+      } */
 
     @media (max-width: 768px) {
       .parallax {
@@ -124,12 +114,12 @@ import Layout from "../layouts/Layout.astro";
     }
   </style>
 
-  <section class="relative py-12 text-white text-custom parallax">
+  <section class="relative py-12 dark:text-white text-gray-700 parallax">
     <div class="overlay"></div>
     <Container size="lg">
       <div class="relative">
         <h1 class="text-xs mb-2 header-color animated-text">
-          <span class="highlight text-white !font-bold">#About us</span>
+          <span class="highlight dark:text-white !font-bold">#About us</span>
         </h1>
         <p class="mb-8 animated-text md:text-[32px] text-[24px]">
           At 1950 Ventures, we seek to generate outstanding returns by <span
@@ -161,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
 
         <h2 class="text-xs mb-2 header-color animated-text">
-          <span class="highlight !font-bold text-white">
+          <span class="highlight !font-bold dark:text-white">
             #India: a unique AI opportunity</span>
         </h2>
 
