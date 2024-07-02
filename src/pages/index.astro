@@ -44,9 +44,8 @@ import Layout from "../layouts/Layout.astro";
     }
 
     /* Parallax effect */
-    .parallax {
-      background: linear-gradient( -54deg, #190230 -23%, #442288, #190230 51% );
-      /* background-image: url("/background.jpeg"); */
+    /* .parallax {
+      background-image: url("/background.jpeg");
       height: 100%;
       background-attachment: fixed;
       background-position: center;
@@ -54,7 +53,33 @@ import Layout from "../layouts/Layout.astro";
       background-size: cover;
       overflow: hidden;
       animation: zoom-in-out 30s ease-in-out infinite;
-    }
+    } */
+
+    .parallax {
+        height: 100%;
+        /* background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; */
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+      .parallax::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(50%);
+        z-index: -1;
+        background-image: url("/background.jpeg");
+
+      }
+
     @media (max-width: 768px) {
       .parallax {
         animation: none; /* Disable animation on mobile */

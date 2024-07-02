@@ -23,7 +23,7 @@ body {
   @apply bg-white dark:bg-black;
   @apply text-black/75 dark:text-white/75;
   font-family: "Roboto", sans-serif;
-   background: linear-gradient( -54deg, #190230 -23%, #190230, #190230 51% );
+   /* background: linear-gradient( -54deg, #190230 -23%, #190230, #190230 51% ); */
   /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
