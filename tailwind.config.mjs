@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         "sans": ["Atkinson", ...defaultTheme.fontFamily.sans],
       },
+  
       typography: {
         DEFAULT: {
           css: {
