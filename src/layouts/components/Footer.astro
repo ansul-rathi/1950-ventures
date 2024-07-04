@@ -4,42 +4,39 @@ import Container from "../../components/Container.astro"
 import { SITE } from "../../lib/consts"
 ---
 
-<footer class="relative bg-white/75 dark:bg-black/50 border-black/10 dark:border-white/25 scrolled">
+<footer class="relative bg-white border-black/10 scrolled">
   <div class="animate">
   
-    <section class=" py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25 scrolled">
+    <section class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 scrolled bg-white">
       <Container size="md">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="flex flex-col items-center sm:items-start">
-            <a href="/" class="flex gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-              <img src="/1950venture-logo.png" alt="1950 Ventures Logo" class="h-10" />
+            <a href="/" class="flex gap-1 w-fit font-semibold text-black hover:text-black transition-colors duration-300 ease-in-out">
+              <img src="/1950VentureLogo.png" alt="1950 Ventures Logo" class="h-10" />
             </a>
           </div>
-          <div class="flex gap-2 justify-center sm:justify-end items-center">
-            <a href="/legal/terms" class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+          <div class="flex gap-2 justify-center sm:justify-end items-center text-black">
+            <div class="text-black hover:text-black transition-colors duration-300 ease-in-out">
               Terms
-            </a> |
-            <a href="/legal/privacy" class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+            </div> |
+            <div class="text-black hover:text-black transition-colors duration-300 ease-in-out">
               Privacy
-            </a>
+            </div>
           </div>
         </div>
       </Container>
     </section>
   
-    <section class=" py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25 scrolled">
+    <section class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 scrolled bg-white">
       <Container size="lg">
           <div class="flex flex-col items-center justify-center">
-    
-            <div class="text-sm mt-2">
+            <div class="text-sm mt-2 text-black">
               &copy; 2024 | All rights reserved
             </div>
           </div>
-  
       </Container>
     </section>
   </div>
-
 </footer>
 
 <script is:inline>

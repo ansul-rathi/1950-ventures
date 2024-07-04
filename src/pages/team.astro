@@ -1,4 +1,5 @@
 ---
+// src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
 
 const teamMembers = [
@@ -17,28 +18,34 @@ const teamMembers = [
     education: "PhD – UC Berkeley",
     secondEducation: "BTech – IIT Kanpur (Director’s Gold Medal)",
     experience: "Assistant Professor at MIT, Co-founder of SafetyYou Inc.",
-    additionalDetail:"Pulkit is an Assistant Professor at MIT where he directs the AI lab. His research on robotics, deep learning, and reinforcement learning has won several awards, including Amazon Research Award, Salesforce Research Award, Sony Faculty Research Award, Fulbright Fellowship and he is a Google Scholar. He co-founded SafelyYou Inc. in 2015, pioneering the use of computer vision to reduce falls in dementia patients.  He serves as an advisor to Common Sense Machines Inc., Lab0 Inc, and Tutor Intelligence Inc. Pulkit was also the co-founder of AI Foundry, a venture studio company in India",
+    additionalDetail: "Pulkit is an Assistant Professor at MIT where he directs the AI lab. His research on robotics, deep learning, and reinforcement learning has won several awards, including Amazon Research Award, Salesforce Research Award, Sony Faculty Research Award, Fulbright Fellowship and he is a Google Scholar. He co-founded SafelyYou Inc. in 2015, pioneering the use of computer vision to reduce falls in dementia patients.  He serves as an advisor to Common Sense Machines Inc., Lab0 Inc, and Tutor Intelligence Inc. Pulkit was also the co-founder of AI Foundry, a venture studio company in India",
     imageUrl: "/team/Pulkit.jpg"
   },
 ];
 ---
 
 <Layout title="Team">
-  <div class="team-page bg-white dark:bg-gray-900">
-    <h1 class="team-heading text-white dark:text-gray-700">Our Amazing Team</h1>
-    <div class="team-members">
+  <div class="relative team-page bg-white dark:bg-gray-900">
+    <!-- Overlay to dim the background -->
+    <div class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50 z-10"></div>
+
+    <!-- Heading above the overlay -->
+    <h1 class="relative z-20 text-black dark:text-black team-heading">Our Amazing Team</h1>
+
+    <!-- Content -->
+    <div class="relative team-members z-20 md:flex">
       {teamMembers.map(member => (
         <div class="team-member">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white dark:bg-[#00203f]">
+          <div class="flip-card-inner md:w-[25vw]">
+            <div class="flip-card-front bg-white dark:bg-[#005b96]">
               <img src={member.imageUrl} alt={member.name} class="member-photo" />
               <h2 class="member-name text-black dark:text-white">{member.name}</h2>
-              <h3 class="member-title text-gray-700 dark:text-gray-400">{member.title}</h3>
+              <h3 class="member-title text-gray-700 dark:text-gray-300">{member.title}</h3>
               <p class="member-education text-gray-700 dark:text-white">{member.education}</p>
               <p class="member-secondEducation text-gray-700 dark:text-white mt-4">{member.secondEducation}</p>
               <p class="member-experience text-gray-700 dark:text-white">{member.experience}</p>
             </div>
-            <div class="flip-card-back bg-gradient-to-r from-purple-800 to-indigo-800 dark:from-gray-800 dark:to-gray-900 text-white">
+            <div class="flip-card-back bg-gradient-to-r from-purple-800 to-indigo-800 dark:from-[#005b96] dark:to-[#005b96] text-white">
               <div class="member-details">
                 <p class="member-education">{member.additionalDetail}</p>
               </div>
@@ -58,7 +65,7 @@ const teamMembers = [
       text-align: center;
       padding-top: 70px;
       height: 100%;
-      background: url('/background.jpeg') no-repeat center center fixed;
+      background: url('/backgroundSecondary.jpg') no-repeat center center fixed;
       background-size: cover;
     }
 
@@ -68,7 +75,6 @@ const teamMembers = [
     }
 
     .team-members {
-      display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -80,7 +86,6 @@ const teamMembers = [
 
     .flip-card-inner {
       position: relative;
-      width: 25vw;
       height: 550px;
       text-align: center;
       transition: transform 0.6s;
@@ -98,7 +103,7 @@ const teamMembers = [
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border: 1px solid #ddd;
+      border: 1px solid black;
       border-radius: 50px;
       padding: 20px;
     }
@@ -116,7 +121,7 @@ const teamMembers = [
       border-radius: 50%;
       filter: grayscale(100%);
       padding-left: 40px;
-      padding-right: 40px
+      padding-right: 40px;
     }
 
     .member-name {
@@ -124,11 +129,12 @@ const teamMembers = [
       margin-top: 4px;
     }
 
-    .member-title{
+    .member-title {
       font-size: 1.2em;
       text-align: center;
       margin: 0.5em 0;
-    },
+    }
+
     .member-education,
     .member-secondEducation,
     .member-experience {
