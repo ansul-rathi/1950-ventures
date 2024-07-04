@@ -4,83 +4,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About">
-  <style>
-    .text-custom {
-      font-weight: 200;
-    }
+ 
 
-    .highlight {
-      background-color: #005b96;
-      font-weight: 400;
-      padding-left: 4px;
-      padding-right: 4px;
-      color: white;
-    }
-
-    .header-color {
-      color: #b0b0b0;
-      font-size: 1rem;
-      margin-top: 100px;
-    }
-
-    .content-container {
-      width: 75%;
-      margin-left: 7%;
-    }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .animated-text {
-      animation: slideUp 1s ease-out;
-    }
-
-    .parallax {
-      background-image: url("/backgroundSecondary.jpg");
-      height: 100%;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-      animation: zoom-in-out 30s ease-in-out infinite;
-    }
-
-    @media (max-width: 768px) {
-      .parallax {
-        animation: none;
-      }
-    }
-
-    @keyframes zoom-in-out {
-      0%,
-      100% {
-        background-size: 100%;
-      }
-      50% {
-        background-size: 110%;
-      }
-    }
-
-    body::-webkit-scrollbar {
-      display: none;
-    }
-    body {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
-
-  <section class="relative py-12 text-black parallax">
-    <div class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50"></div>
+  <section class="relative py-12 text-black font-[300] z-10  ">
+    <!-- <div class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50"></div> -->
     <Container size="lg">
       <div class="relative">
         <h1 class="text-xs mb-2 header-color animated-text">

@@ -16,35 +16,139 @@ const description = "Venture";
 <html lang="en">
   <head>
     <BaseHead title={`${title}`} description={description} />
-    <link rel="stylesheet" href="/src/styles/tailwind.css">
+    <!-- <link rel="stylesheet" href="/src/styles/tailwind.css"> -->
+    <style is:global>
+      .text-custom {
+        font-weight: 200;
+      }
+
+      .highlight {
+        background-color: #005b96;
+        font-weight: 400;
+        padding-left: 4px;
+        padding-right: 4px;
+        color: white;
+      }
+
+      .header-color {
+        color: #b0b0b0;
+        font-size: 1rem;
+        margin-top: 100px;
+      }
+
+      .content-container {
+        width: 75%;
+        margin-left: 7%;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animated-text {
+        animation: slideUp 1s ease-out;
+      }
+
+      .parallax {
+        position: relative;
+        width: 100%;
+      }
+
+      .parallax::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: grayscale(50%);
+        z-index: 0;
+        background-image: url("/backgroundSecondary.jpg");
+        animation: zoom-in-out 30s ease-in-out infinite;
+      }
+
+      .parallax::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.5
+        ); /* Adjust the opacity as needed */
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .parallax::before {
+          animation: none;
+        }
+      }
+
+      @keyframes zoom-in-out {
+        0%,
+        100% {
+          background-size: 100%;
+        }
+        50% {
+          background-size: 110%;
+        }
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
   </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white parallax"
+  >
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
 
-<!--    <button id="theme-toggle" class="fixed bottom-4 right-4 p-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black">Toggle Theme</button>  -->
+    <!--    <button id="theme-toggle" class="fixed bottom-4 right-4 p-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black">Toggle Theme</button>  -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme') || 'light';
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const currentTheme = localStorage.getItem("theme") || "light";
 
-        if (currentTheme === 'dark') {
-          document.documentElement.classList.add('dark');
+        if (currentTheme === "dark") {
+          document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.remove("dark");
         }
 
-        themeToggle.addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
-          const newTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-          localStorage.setItem('theme', newTheme);
+        themeToggle.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          const newTheme = document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light";
+          localStorage.setItem("theme", newTheme);
         });
       });
     </script>
-    <style is:global>
+    <!-- <style is:global>
       :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
@@ -56,22 +160,8 @@ const description = "Venture";
           white 60%
         );
       }
-      html {
-        font-family: system-ui, sans-serif;
-        background-size: 224px;
-        background-color: white;
-      }
-      code {
-        font-family:
-          Menlo,
-          Monaco,
-          Lucida Console,
-          Liberation Mono,
-          DejaVu Sans Mono,
-          Bitstream Vera Sans Mono,
-          Courier New,
-          monospace;
-      }
-    </style>
+ 
+  
+    </style> -->
   </body>
 </html>

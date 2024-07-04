@@ -4,12 +4,13 @@
 
 
 html {
-  overflow-y: scroll;
   color-scheme: dark;
   background-color: black;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  overflow-y: scroll;
+  
 }
 
 html.dark {
@@ -20,7 +21,7 @@ html.dark {
 html,
 body {
   @apply h-full w-full antialiased;
-  @apply bg-white dark:bg-black;
+  /* @apply bg-white dark:bg-black; */
   @apply text-black/75 dark:text-white/75;
   font-family: "Roboto", sans-serif;
    /* background: linear-gradient( -54deg, #190230 -23%, #190230, #190230 51% ); */
