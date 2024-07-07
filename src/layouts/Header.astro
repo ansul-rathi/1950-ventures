@@ -10,15 +10,15 @@ import Container from "../components/Container.astro"
     <div class="relative h-full w-full flex justify-between items-center">
       <div class="flex items-center">
         <a href="/" class="flex items-center">
-          <img src="/1950VentureLogo.png" alt="1950 Ventures Logo" class="h-10" />
+          <img src="/1950VentureLogo.png" alt="1950 Ventures Logo" class="md:h-10 h-5" />
         </a>
       </div>
 
       <div class="flex items-center md:hidden">
-        <button id="menu-button" class="flex flex-col h-12 w-12 justify-center items-center group">
-          <div class="w-6 h-1 bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
-          <div class="w-6 h-1 bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
-          <div class="w-6 h-1 bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
+        <button id="menu-button" class="flex flex-col md:h-12 md:w-12 h-6 w-6 justify-center items-center group">
+          <div class="w-6 h-[2px] bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
+          <div class="w-6 h-[2px] bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
+          <!-- <div class="w-6 h-1 bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div> -->
         </button>
       </div>
 
@@ -35,7 +35,7 @@ import Container from "../components/Container.astro"
   </Container>
 
   <!-- Drawer -->
-  <div id="drawer" class="fixed top-16 left-0 w-full h-full bg-white transform -translate-x-full transition-transform duration-300 ease-in-out">
+  <div id="drawer" class="fixed top-16 left-0 h-screen w-screen bg-white transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex flex-col p-4 text-center">
       <a href="/team" class="font-bold py-2 hover:text-blue-700">TEAM</a>
       <a href="/contact" class="font-bold py-2 hover:text-blue-700">CONTACT US</a>
@@ -77,13 +77,24 @@ import Container from "../components/Container.astro"
 
   function toggleDrawer() {
     const drawer = document.getElementById('drawer');
+    const menuButton = document.getElementById('menu-button');
+
     if (drawer.classList.contains('-translate-x-full')) {
       drawer.classList.remove('-translate-x-full');
+      // Change menu button to close button
+      menuButton.innerHTML = `
+        <div class="w-4 h-[2px] bg-black mb-[8px] transform rotate-45 translate-y-1.5 transition-all duration-300 ease-in-out"></div>
+        <div class="w-4 h-[2px] bg-black mb-[8px] transform -rotate-45 -translate-y-1.5 transition-all duration-300 ease-in-out"></div>
+      `;
     } else {
       drawer.classList.add('-translate-x-full');
+      // Change close button back to menu button
+      menuButton.innerHTML = `
+        <div class="w-6 h-[2px] bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
+        <div class="w-6 h-[2px] bg-black mb-1 group-hover:bg-gray-700 transition-all duration-300 ease-in-out"></div>
+      `;
     }
   }
-
   document.getElementById('menu-button').addEventListener('click', toggleDrawer);
 
   window.addEventListener('scroll', handleScroll);
