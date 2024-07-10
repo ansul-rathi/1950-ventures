@@ -1,5 +1,4 @@
 ---
-// src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
 
 const teamMembers = [
@@ -30,14 +29,14 @@ const teamMembers = [
     <div class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50 z-10"></div>
 
     <!-- Heading above the overlay -->
-    <h1 class="relative z-20 text-black dark:text-black team-heading">Our Amazing Team</h1>
+    <!-- <h1 class="relative z-20 text-black dark:text-black team-heading">Our Amazing Team</h1> -->
 
     <!-- Content -->
     <div class="relative team-members z-20 md:flex">
       {teamMembers.map(member => (
         <div class="team-member">
-          <div class="flip-card-inner md:w-[25vw]">
-            <div class="flip-card-front dark:bg-white bg-[#005b96] items-center ">
+          <div class="card md:w-[25vw]">
+            <div class="card-front dark:bg-white bg-[#005b96] items-center ">
               <img src={member.imageUrl} alt={member.name} class="member-photo" />
               <h2 class="member-name dark:text-black text-white">{member.name}</h2>
               <h3 class="member-title dark:text-gray-700 text-gray-300">{member.title}</h3>
@@ -45,10 +44,9 @@ const teamMembers = [
               <p class="member-secondEducation dark:text-gray-700 text-white mt-4">{member.secondEducation}</p>
               <p class="member-experience dark:text-gray-700 text-white">{member.experience}</p>
             </div>
-           <!-- <div class="flip-card-back bg-gradient-to-r dark:from-purple-800 dark:to-indigo-800 dark:from-[#005b96] to-[#005b96] text-white"> -->
-           <div class="flip-card-back bg-[#005b96] text-white">
-              <div class="member-details"> 
-                <p class="member-education">{member.additionalDetail}</p>
+            <div class="card-back bg-[#005b96] text-white">
+              <div class="member-details">
+                <p class="member-additional">{member.additionalDetail}</p>
               </div>
             </div>
           </div>
@@ -81,43 +79,57 @@ const teamMembers = [
     }
 
     .team-member {
-      perspective: 1000px;
       margin: 1em;
     }
 
-    .flip-card-inner {
+    .card {
       position: relative;
       height: 550px;
       text-align: center;
+      overflow: hidden;
+      border: 1px solid black;
+      border-radius: 50px;
       transition: transform 0.6s;
       transform-style: preserve-3d;
-      margin-left: 30px;
-      margin-right: 30px;
     }
 
-    .team-member:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
+    .card-front, .card-back {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      /* justify-content: center; */
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border: 1px solid black;
-      border-radius: 50px;
       padding: 20px;
+      transition: transform 0.6s;
     }
 
-    .flip-card-back {
-      transform: rotateY(180deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1em;
+    .card-front {
+      z-index: 2;
+      transform: translateY(0);
+    }
+
+    .card-back {
+      z-index: 3;
+      transform: translateY(100%);
+      border-radius: 10px;
+    }
+
+    .card:hover .card-front {
+      /* transform: translateY(-100%); */
+    }
+
+    .card:hover .card-back {
+      transform: translateY(40%);
+    }
+
+    .member-photo {
+      width: 100%;
+      border-radius: 50%;
+      filter: grayscale(100%);
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
     .member-photo {
@@ -145,6 +157,11 @@ const teamMembers = [
       font-size: 0.9em;
       text-align: center;
       margin: 0.5em 0;
+    }
+
+    .member-additional {
+      font-size: 0.9em;
+      text-align: left;
     }
   </style>
 </Layout>
