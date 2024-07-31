@@ -1,39 +1,48 @@
 ---
 // import { SITE, SOCIALS } from "@consts"
-import Container from "../../components/Container.astro"
-import { SITE } from "../../lib/consts"
+import Container from "../../components/Container.astro";
+import { SITE } from "../../lib/consts";
 ---
 
-<footer class="relative bg-white border-black/10 scrolled z-10">
+<footer class="relative z-10">
   <div class="animate">
-  
-    <section class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 scrolled bg-white">
+    <section class="py-5 bg-white">
       <Container size="md">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="flex flex-col items-center sm:items-start">
-            <a href="/" class="flex gap-1 w-fit font-semibold text-black hover:text-black transition-colors duration-300 ease-in-out">
-              <img src="/1950VentureLogo.png" alt="1950 Ventures Logo" class="h-10" />
-            </a>
-          </div>
-          <div class="flex gap-2 justify-center sm:justify-end items-center text-black">
-            <div class="text-black hover:text-black transition-colors duration-300 ease-in-out">
+          <a href="/" class="flex flex-col items-center sm:items-start">
+            <img
+              src="/1950VentureLogo.png"
+              alt="1950 Ventures Logo"
+              class="h-10"
+            />
+          </a>
+          <div
+            class="flex gap-2 justify-center sm:justify-end items-center text-black"
+          >
+            <div
+              class="text-black hover:text-black transition-colors duration-300 ease-in-out"
+            >
               Terms
             </div> |
-            <div class="text-black hover:text-black transition-colors duration-300 ease-in-out">
+            <div
+              class="text-black hover:text-black transition-colors duration-300 ease-in-out"
+            >
               Privacy
             </div>
           </div>
         </div>
       </Container>
     </section>
-  
-    <section class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 scrolled bg-white">
+
+    <section
+      class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 scrolled bg-white"
+    >
       <Container size="lg">
-          <div class="flex flex-col items-center justify-center">
-            <div class="text-sm mt-2 text-black">
-              &copy; 2024 | All rights reserved
-            </div>
+        <div class="flex flex-col items-center justify-center">
+          <div class="text-sm mt-2 text-black">
+            &copy; 2024 | All rights reserved
           </div>
+        </div>
       </Container>
     </section>
   </div>
@@ -41,18 +50,18 @@ import { SITE } from "../../lib/consts"
 
 <script is:inline>
   function goBackToTop(event) {
-    event.preventDefault()
+    event.preventDefault();
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   function inintializeBackToTop() {
-    const backToTop = document.getElementById("back-to-top")
-    backToTop?.addEventListener("click", goBackToTop)
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", goBackToTop);
   }
 
-  document.addEventListener("astro:after-swap", inintializeBackToTop)
-  inintializeBackToTop()
+  document.addEventListener("astro:after-swap", inintializeBackToTop);
+  inintializeBackToTop();
 </script>
