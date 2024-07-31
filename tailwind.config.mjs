@@ -1,4 +1,5 @@
-import defaultTheme from "tailwindcss/defaultTheme"
+import { colors } from "@mui/material";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -6,9 +7,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "sans": ["Atkinson", ...defaultTheme.fontFamily.sans],
+        sans: ["Atkinson", ...defaultTheme.fontFamily.sans],
       },
-  
+      colors: {
+        primary: "#00203f",
+        secondary: "#03396c",
+        tertiay: "#005b96",
+      },
+
       typography: {
         DEFAULT: {
           css: {
@@ -16,6 +22,6 @@ export default {
           },
         },
       },
-    }
-  }
+    },
+  },
 };
