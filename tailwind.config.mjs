@@ -12,7 +12,7 @@ export default {
       colors: {
         primary: "#00203f",
         secondary: "#03396c",
-        tertiay: "#005b96",
+        tertiary: "#005b96",
       },
 
       typography: {
