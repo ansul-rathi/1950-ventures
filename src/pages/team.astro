@@ -26,41 +26,36 @@ const teamMembers = [
 ---
 
 <Layout title="Team">
-  <div class="relative team-page dark:bg-white bg-gray-900">
-    <!-- Overlay to dim the background -->
+  <div class="relative team-page bg-gray-900">
     <div
       class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50 z-10"
     >
     </div>
 
-    <!-- Heading above the overlay -->
-    <!-- <h1 class="relative z-20 text-black dark:text-black team-heading">Our Amazing Team</h1> -->
-
-    <!-- Content -->
-    <div class="relative team-members z-20 md:flex">
+    <!-- <div class="relative team-members z-20 md:flex">
       {
         teamMembers.map((member) => (
           <div class="team-member">
-            <div class="card md:w-[35vw] xl:w-[25vw]">
-              <div class="card-front dark:bg-white bg-[#005b96] items-center ">
+            <div class="card w-[70vw] md:w-[35vw] xl:w-[25vw]">
+              <div class="card-front bg-white bg-[#005b96] items-center ">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
                   class="member-photo"
                 />
-                <h2 class="member-name dark:text-black text-white">
+                <h2 class="member-name text-black text-white">
                   {member.name}
                 </h2>
-                <h3 class="member-title dark:text-gray-700 text-gray-300">
+                <h3 class="member-title text-white text-gray-300">
                   {member.title}
                 </h3>
-                <p class="member-education dark:text-gray-700 text-white">
+                <p class="member-education text-white text-white">
                   {member.education}
                 </p>
-                <p class="member-secondEducation dark:text-gray-700 text-white mt-4">
+                <p class="member-secondEducation text-white text-white mt-4">
                   {member.secondEducation}
                 </p>
-                <p class="member-experience dark:text-gray-700 text-white">
+                <p class="member-experience text-white text-white">
                   {member.experience}
                 </p>
               </div>
@@ -73,117 +68,176 @@ const teamMembers = [
           </div>
         ))
       }
+    </div> -->
+    <div
+      class="relative team-members z-20 overflow-y-auto max-h-[80vh] md:max-h-[85vh] lg:max-h-[90vh]"
+    >
+      {
+        teamMembers.map((member) => (
+          <div class="team-member">
+            <div class="card w-[70vw] md:w-[35vw] xl:w-[25vw]">
+              <div class="card-front  bg-[#005b96] items-center">
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  class="member-photo"
+                />
+                <h2 class="member-name text-black ">{member.name}</h2>
+                <h3 class="member-title text-white">{member.title}</h3>
+                <p class="member-education text-white ">{member.education}</p>
+                <p class="member-secondEducation text-white  mt-4">
+                  {member.secondEducation}
+                </p>
+                <p class="member-experience text-white ">{member.experience}</p>
+              </div>
+              <div class="card-back bg-[#005b96] text-white">
+                <div class="member-details">
+                  <p class="member-additional">{member.additionalDetail}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
-
-  <style>
-    body {
-      margin: 0;
-    }
-
-    .team-page {
-      text-align: center;
-      padding-top: 70px;
-      height: 100%;
-      background: url("/backgroundSecondary.jpg") no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    .team-heading {
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-
-    .team-members {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .team-member {
-      margin: 1em;
-    }
-
-    .card {
-      position: relative;
-      height: 550px;
-      text-align: center;
-      overflow: hidden;
-      border: 1px solid black;
-      border-radius: 50px;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-
-    .card-front,
-    .card-back {
-      display: flex;
-      flex-direction: column;
-      /* justify-content: center; */
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      padding: 20px;
-      transition: transform 0.6s;
-    }
-
-    .card-front {
-      z-index: 2;
-      transform: translateY(0);
-    }
-
-    .card-back {
-      z-index: 3;
-      transform: translateY(100%);
-      border-radius: 10px;
-    }
-
-    .card:hover .card-front {
-      /* transform: translateY(-100%); */
-    }
-
-    .card:hover .card-back {
-      transform: translateY(40%);
-    }
-
-    .member-photo {
-      width: 100%;
-      border-radius: 50%;
-      filter: grayscale(100%);
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-
-    .member-photo {
-      width: 100%;
-      border-radius: 50%;
-      filter: grayscale(100%);
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-
-    .member-name {
-      font-size: 1.9em;
-      margin-top: 4px;
-    }
-
-    .member-title {
-      font-size: 1.2em;
-      text-align: center;
-      margin: 0.5em 0;
-    }
-
-    .member-education,
-    .member-secondEducation,
-    .member-experience {
-      font-size: 0.9em;
-      text-align: center;
-      margin: 0.5em 0;
-    }
-
-    .member-additional {
-      font-size: 0.9em;
-      text-align: left;
-    }
-  </style>
 </Layout>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  .team-page {
+    text-align: center;
+    padding-top: 70px;
+    height: 100%;
+    background: url("/backgroundSecondary.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .team-heading {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-member {
+    margin: 1em;
+  }
+
+  .card {
+    position: relative;
+    min-height: 500px; /* Set a minimum height */
+    max-height: 550px; /* Set a maximum height */
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 50px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      min-height: 450px; /* Adjust for smaller screens */
+      max-height: 500px;
+      border-radius: 50px;
+    }
+  }
+  @media (max-width: 425px) {
+    .card {
+      height: 450px;
+      border-radius: 50px;
+    }
+  }
+  .card-front,
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px;
+    transition: transform 0.6s;
+    border-radius: 50px;
+  }
+
+  .card-front {
+    z-index: 2;
+    transform: translateY(0);
+    border-radius: 50px;
+  }
+
+  .card-back {
+    z-index: 3;
+    transform: translateY(100%);
+    border-radius: 50px;
+    overflow-y: auto; /* Enable scrolling if content exceeds */
+  }
+
+  .card:hover .card-front {
+    /* transform: translateY(-100%); */
+  }
+
+  .card:hover .card-back {
+    transform: translateY(0); /* Ensure full visibility when flipped */
+    overflow-y: auto; /* Allow the text to scroll if it overflows */
+  }
+
+  .member-photo {
+    width: 100%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .member-photo {
+    width: 100%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .member-name {
+    font-size: 1.9em;
+    margin-top: 4px;
+  }
+
+  .member-title {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0.5em 0;
+  }
+
+  .member-education,
+  .member-secondEducation,
+  .member-experience {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0.5em 0;
+  }
+
+  .member-additional {
+    display: flex;
+    font-size: 0.9em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    overflow-wrap: break-word; /* Ensure text doesn't overflow out of container */
+    word-break: break-word; /* For very long words */
+    max-height: calc(
+      100% - 20px
+    ); /* Make sure the text doesn't overflow the card back */
+  }
+</style>

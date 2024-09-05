@@ -59,11 +59,13 @@ const description = "Venture";
       .parallax {
         position: relative;
         width: 100%;
+        overflow: hidden; /* Prevent overflow issues */
       }
 
       .parallax::before {
         content: "";
-        position: fixed;
+        /* position: fixed; */
+        position: absolute; /* Use absolute to position the image */
         top: 0;
         left: 0;
         width: 100%;
@@ -95,6 +97,7 @@ const description = "Venture";
 
       @media (max-width: 768px) {
         .parallax::before {
+          transform: none; /* Disable scaling on smaller screens */
           animation: none;
         }
       }
@@ -118,16 +121,14 @@ const description = "Venture";
       }
     </style>
   </head>
-  <body
-    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white parallax"
-  >
+  <body class="bg-gray-900 text-white parallax">
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
 
-    <!--    <button id="theme-toggle" class="fixed bottom-4 right-4 p-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black">Toggle Theme</button>  -->
+    <!--    <button id="theme-toggle" class="fixed bottom-4 right-4 p-2 bg-gray-800 text-white bg-gray-200 text-black">Toggle Theme</button>  -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const themeToggle = document.getElementById("theme-toggle");
@@ -152,7 +153,7 @@ const description = "Venture";
       :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
-        --accent-dark: 49, 10, 101;
+        --accent- 49, 10, 101;
         --accent-gradient: linear-gradient(
           45deg,
           rgb(var(--accent)),

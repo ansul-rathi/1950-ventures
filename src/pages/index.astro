@@ -1,111 +1,88 @@
 ---
 import Container from "../components/Container.astro";
+import InfoCard from "../components/InfoCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+const data1 = [
+  {
+    title: "The Turing Test",
+    description:
+      "In 1950, Alan Turing in his seminal paper 'Computing Machinery and Intelligence' boldly asked, 'can machines think?'. Since then, the Turing Test has become a central concept in the field of Artificial Intelligence.",
+  },
+  {
+    title: "The IITs",
+    description:
+      "In 1950, the Indian Institutes of Technology were established with a motto to 'lead me from darkness to light' and set the foundations for engineering education in the country.",
+  },
+  {
+    title: "1950 Ventures",
+    description:
+      "At 1950 Ventures, we invest in entrepreneurs primarily from India who are leading technology innovation to build a brighter future for the world.",
+  },
+];
+
+const data2 = [
+  {
+    description:
+      "We are long-term investors, helping bold builders of the future realize their ambition, harnessing the potential of AI and deep-technology, with population scale impact in reshaping tomorrow’s world.",
+  },
+  {
+    description:
+      "Our leadership team has over 125+ years of combined experience in underwriting technology and mentoring businesses to commercialize and grow globally.",
+  },
+  {
+    description:
+      "We have a profound understanding of what it takes to nurture and grow deep-technology companies from idea to global scale, built through our first-hand experience with AI businesses and insights from advising major corporates.",
+  },
+];
+
+const data3 = [
+  {
+    title: "Growth",
+    description:
+      "We bring the pragmatism and focus required for targeted business development aligned to the sophisticated and protracted purchase cycles of corporates.",
+  },
+  {
+    title: "Scale",
+    description:
+      "We help our founders navigate the complexities of scaling their operations safely and efficiently in compliance with evolving regulatory requirements.",
+  },
+  {
+    title: "Network",
+    description:
+      "We have a broad network of relationships across sectors and geographies and provide access to an unmatched ecosystem of subject matter experts as well as peers.",
+  },
+];
 ---
 
 <Layout title="About">
-  <section
-    class="relative py-12 text-black font-[300] z-10 [text-shadow:_0_0_0.5px_black]"
-  >
-    <!-- <div class="absolute top-0 left-0 w-full h-full bg-gray-200 opacity-50"></div> -->
+  <section class="relative text-black z-10">
     <Container size="lg">
-      <div class="relative">
-        <h1 class="text-xs mb-2 header-color animated-text">
-          <span class="highlight !font-bold">#About us</span>
-        </h1>
-        <p class="mb-8 animated-text md:text-[32px] text-[24px]">
-          At 1950 Ventures, we seek to generate outstanding returns by <span
-            class="highlight">Investing</span
-          >
-          in AI-first companies, building the <span class="highlight"
-            >'Intelligence Economy'</span
-          > and solving real-world problems. We believe in <span
-            class="highlight"
-            >connecting entrepreneurs, engineers, industry experts, executives,</span
-          >
-          and <span class="highlight">investors,</span> bringing the collective power
-          of the network to harness the incredible potential of artificial intelligence.
-          <!-- At 1950 Ventures, we seek to generate outstanding returns by <span
-            class="highlight">Investing</span
-          >, <span class="highlight">Incubating</span>, and <span
-            class="highlight">Endorsing AI-first companies</span
-          > building the "Intelligence Economy". We believe in <span
-            class="highlight"
-            >connecting entrepreneurs, engineers, industry experts, executives,
-            and investors</span
-          >, bringing the collective power of the network to harness the
-          incredible potential of artificial intelligence. -->
-        </p>
-        <p class="mb-8 animated-text md:text-[32px] text-[24px]">
-          We have unparalleled access to start-ups in India, built over two
-          decades of on the ground presence and leadership in the AI ecosystem.
-          The founding team has <span class="highlight">125+ years</span> of experience
-          in underwriting technology and mentoring businesses globally. We have previously
-          co-founded, incubated, and invested in <span class="highlight"
-            >15+ AI and robotics companies</span
-          >.
-          <!-- We have unparalleled access to startups in India, as our previous
-          experience founding ART PARK and AI Foundry with support from the
-          Government of India has provided deep penetration in the startup
-          ecosystem in the country. The founding team has <span
-            class="highlight">125+ years of experience</span
-          > in underwriting technology and mentoring businesses globally. We have
-          co-founded, incubated, and invested in <span class="highlight"
-            >15+ AI and robotics companies</span
-          >. -->
-        </p>
-        <!-- <p class="mb-8 md:text-[32px] text-[24px] animated-text">
-          Our current pipeline has qualified AI-first startups for over <span
-            class="highlight">$100 million investment</span
-          >.
-        </p> -->
-
-        <h2 class="text-xs mb-2 header-color animated-text">
-          <span class="highlight !font-bold"
-            >#India: a unique AI opportunity</span
-          >
-        </h2>
-
-        <p class="mb-8 md:text-[32px] text-[24px] animated-text">
-          Despite global economic uncertainties, India's growth outlook remains
-          robust, building on a decade of stellar performance. This growth is
-          fueled by strong domestic consumption, structural reforms, and a
-          vibrant services sector. India offers significant opportunity and
-          continues to attract foreign investment because of its young
-          workforce, expanding digital infrastructure, and the government's
-          focus on development and ease of doing business.
-          <!-- Despite global economic uncertainties, India's growth outlook remains
-          robust, with GDP growth projected to stay at <span class="highlight"
-            >7%</span
-          > in the coming years. This growth is fueled by strong domestic consumption,
-          ongoing structural reforms, and a vibrant services sector. India continues
-          to attract significant foreign investment, underpinned by its young workforce,
-          expanding digital infrastructure, and the government's focus on infrastructure
-          development, and improving ease of doing business. -->
-        </p>
-        <p class="mb-8 animated-text md:text-[32px] text-[24px]">
-          India is home to <span class="highlight">2000+ AI-led startups</span>,
-          and is among the top countries for AI talent. India's digital public
-          infrastructure leads the world, providing the foundational technology
-          stack for next-gen AI applications. In addition, government policy and
-          regulations are increasingly focused on nurturing local talent,
-          supporting local AI businesses, and creating a world-leading AI
-          powerhouse.
-          <!-- India is home to <span class="highlight">2000+ AI-led startups</span> and
-          is among the top countries for AI talent. Moreover, the digital public
-          infrastructure in the country (e.g. Digital Identity, Payments) is leading
-          the world, providing the foundational technology stack that enables next-gen
-          AI applications. Government policies and regulations are increasingly focused
-          on nurturing local talent, promoting education, and conducive to the implementation
-          and adoption of AI solutions. -->
-        </p>
-        <p class="animated-text md:text-[32px] text-[24px]">
-          We believe in the India story. We see the country's potential to be a
-          world leader in AI.
-          <!-- We believe in the India story. We see its potential to be a world
-          leader in AI. -->
-        </p>
+      <div
+        class="relative max-h-[85vh] lg:max-h-[88vh] overflow-y-auto pt-20 scrollbar-hidden"
+      >
+        <!-- 1950 Section -->
+        <div>
+          <InfoCard description={data1} imageText="1950" />
+        </div>
+        <div>
+          <InfoCard description={data2} imageText="Who we are" />
+        </div>
+        <div>
+          <InfoCard description={data3} imageText="Value add" />
+        </div>
       </div>
     </Container>
   </section>
 </Layout>
+
+<style>
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+</style>

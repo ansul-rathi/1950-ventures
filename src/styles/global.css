@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   color-scheme: dark;
   background-color: black;
@@ -10,7 +9,6 @@ html {
   font-optical-sizing: auto;
   font-style: normal;
   overflow-y: scroll;
-  
 }
 
 html.dark {
@@ -21,15 +19,14 @@ html.dark {
 html,
 body {
   @apply h-full w-full antialiased;
-  /* @apply bg-white dark:bg-black; */
-  @apply text-black/75 dark:text-white/75;
+  /* @apply bg-white bg-black; */
+  @apply text-black/75;
   font-family: "Roboto", sans-serif;
-   /* background: linear-gradient( -54deg, #190230 -23%, #190230, #190230 51% ); */
+  /* background: linear-gradient( -54deg, #190230 -23%, #190230, #190230 51% ); */
   /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */ 
-
+  background-size: cover; */
 }
 
 body {
@@ -37,7 +34,7 @@ body {
 }
 
 main {
-  @apply flex flex-col flex-1 bg-white dark:bg-black;
+  @apply flex flex-col flex-1  bg-black;
 }
 
 header {
@@ -50,19 +47,19 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  @apply bg-white/75 dark:bg-black/50;
-  @apply border-black/10 dark:border-white/25;
+  @apply bg-black/50;
+  @apply border-black/10;
   @apply backdrop-blur-sm saturate-200;
 }
 
 footer.scrolled {
-  @apply bg-white/75 dark:bg-black/50;
-  @apply border-black/10 dark:border-white/25;
+  @apply bg-black/50;
+  @apply border-black/10;
   @apply backdrop-blur-sm saturate-200;
 }
 
 .page-heading {
-  @apply font-semibold text-black dark:text-white;
+  @apply font-semibold text-black;
 }
 
 .blend {
