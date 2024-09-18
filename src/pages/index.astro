@@ -47,35 +47,31 @@ const data3 = [
 ---
 
 <Layout title="About">
-  <section class="relative text-black z-10">
-    <Container size="lg">
-      <div
-        class="relative max-h-[85vh] lg:max-h-[88vh] overflow-y-auto pt-20 scrollbar-hidden"
-      >
-      <div>
-        <AboutUs />
-      </div>
-      <div>
-        <InfoCardFull description={data1} imageText="Who we are" color="#005b96" />
-      </div>
-      <div>
-        <InfoCardFull description={data2} imageText="The value we bring" color="#005b96"/>
-      </div>
-      <div>
-        <InfoCardFull description={data3} imageText="Why 1950 ?" color="#005b96" />
-      </div>
-        <!-- 1950 Section -->
-        <!-- <div>
-          <InfoCard description={data1} imageText="1950" />
-        </div>
-        <div>
-          <InfoCard description={data2} imageText="Who we are" />
-        </div>
-        <div>
-          <InfoCard description={data3} imageText="Value add" />
-        </div> -->
-      </div>
+  <section class="relative text-black">
+    <div class="bg-[#ffffffD9] py-20 w-full">
+    <Container size="lg" >
+      <AboutUs />
     </Container>
+  </div>
+
+  <div class="bg-[#005b96D9] w-full py-20">
+    <Container size="lg" >
+      <InfoCardFull description={data1} imageText="Who we are" color="#005b96" />
+    </Container>
+  </div>
+
+  <div class="bg-[#8a9fb1D9] w-full py-20">
+    <Container size="lg" >
+      <InfoCardFull description={data2} imageText="The value we bring" color="#005b96"/>
+    </Container>
+  </div>
+
+  <div class="bg-[#ffffffD9] w-full py-20">
+    <Container size="lg" >
+      <InfoCardFull description={data3} imageText="Why 1950 ?" color="#005b96" />
+    </Container>
+  </div>
+
   </section>
 </Layout>
 
