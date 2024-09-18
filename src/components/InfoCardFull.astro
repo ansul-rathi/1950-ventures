@@ -1,0 +1,40 @@
+---
+const { imageText, description = [], color } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row items-center mb-12 px-4 md:px-8 h-[70vh]">
+  <div class="hexagon-container mb-4 md:mb-0">
+    <div
+    class={`hexagon bg-[${color}]`}
+    style="
+      width: 270px;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff; 
+      font-size: 35px;
+      font-weight: bold;
+      text-align: center;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      border: 2px solid #d1dfe7;
+    "
+  >
+    {imageText}
+  </div>
+  
+
+  </div>
+  <div class="md:ml-8 text-center md:text-left">
+    {
+      description.map((item) => (
+        <div class="text-sm md:text-base lg:text-2xl mb-4 leading-7">
+          {item.title && (
+            <span class="font-semibold italic mb-2">{item.title} :</span>
+          )}
+          {item.description}
+        </div>
+      ))
+    }
+  </div>
+</div>

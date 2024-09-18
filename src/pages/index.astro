@@ -1,56 +1,47 @@
 ---
+import AboutUs from "../components/AboutUs.astro";
 import Container from "../components/Container.astro";
 import InfoCard from "../components/InfoCard.astro";
+import InfoCardFull from "../components/InfoCardFull.astro";
 import Layout from "../layouts/Layout.astro";
 
 const data1 = [
-  {
-    title: "The Turing Test",
-    description:
-      "In 1950, Alan Turing in his seminal paper 'Computing Machinery and Intelligence' boldly asked, 'can machines think?'. Since then, the Turing Test has become a central concept in the field of Artificial Intelligence.",
-  },
-  {
-    title: "The IITs",
-    description:
-      "In 1950, the Indian Institutes of Technology were established with a motto to 'lead me from darkness to light' and set the foundations for engineering education in the country.",
-  },
-  {
-    title: "1950 Ventures",
-    description:
-      "At 1950 Ventures, we invest in entrepreneurs primarily from India who are leading technology innovation to build a brighter future for the world.",
-  },
-];
-
-const data2 = [
-  {
-    description:
-      "We are long-term investors, helping bold builders of the future realize their ambition, harnessing the potential of AI and deep-technology, with population scale impact in reshaping tomorrow’s world.",
-  },
   {
     description:
       "Our leadership team has over 125+ years of combined experience in underwriting technology and mentoring businesses to commercialize and grow globally.",
   },
   {
     description:
-      "We have a profound understanding of what it takes to nurture and grow deep-technology companies from idea to global scale, built through our first-hand experience with AI businesses and insights from advising major corporates.",
+      "We have a clear understanding of what it takes to nurture and grow deep-technology companies from idea to global scale, built through our first-hand experience with AI businesses and insights from advising major corporates.",
+  },
+];
+
+const data2 = [
+  {
+    title: 'Growth',
+    description:
+      "Pragmatism and focus required for targeted business development aligned to the sophisticated and protracted purchase cycles of corporates.",
+  },
+  {
+    title: 'Scale',
+    description:
+      "Helping our founders navigate the complexities of scaling their operations safely and efficiently in compliance with evolving regulatory requirements.",
+  },
+  {
+    title: 'Network',
+    description:
+      "A broad network of relationships across sectors and geographies that provide access to an unmatched ecosystem of subject matter experts as well as peers.",
   },
 ];
 
 const data3 = [
   {
-    title: "Growth",
     description:
-      "We bring the pragmatism and focus required for targeted business development aligned to the sophisticated and protracted purchase cycles of corporates.",
+      "In 1950, Alan Turing in his seminal paper 'Computing Machinery and Intelligence' boldly asked, 'can machines think?'. Since then, the Turing Test has become a central concept in the field of Artificial Intelligence.",
   },
   {
-    title: "Scale",
     description:
-      "We help our founders navigate the complexities of scaling their operations safely and efficiently in compliance with evolving regulatory requirements.",
-  },
-  {
-    title: "Network",
-    description:
-      "We have a broad network of relationships across sectors and geographies and provide access to an unmatched ecosystem of subject matter experts as well as peers.",
+      "In 1950, the Indian Institutes of Technology were established with a motto to 'lead me from darkness to light' and set the foundations for engineering education in the country.",
   },
 ];
 ---
@@ -61,8 +52,20 @@ const data3 = [
       <div
         class="relative max-h-[85vh] lg:max-h-[88vh] overflow-y-auto pt-20 scrollbar-hidden"
       >
+      <div>
+        <AboutUs />
+      </div>
+      <div>
+        <InfoCardFull description={data1} imageText="Who we are" color="#005b96" />
+      </div>
+      <div>
+        <InfoCardFull description={data2} imageText="The value we bring" color="#005b96"/>
+      </div>
+      <div>
+        <InfoCardFull description={data3} imageText="Why 1950 ?" color="#005b96" />
+      </div>
         <!-- 1950 Section -->
-        <div>
+        <!-- <div>
           <InfoCard description={data1} imageText="1950" />
         </div>
         <div>
@@ -70,7 +73,7 @@ const data3 = [
         </div>
         <div>
           <InfoCard description={data3} imageText="Value add" />
-        </div>
+        </div> -->
       </div>
     </Container>
   </section>
