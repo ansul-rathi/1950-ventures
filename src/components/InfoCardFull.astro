@@ -3,25 +3,26 @@ const { imageText, description = [], color, textColor } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row items-center">
-  <div class="hexagon-container mb-4 md:mb-0">
+  <div class="hidden md:block hexagon-container mb-4 md:mb-0">
     <div
-    class={`hexagon bg-[${color}] text-[${textColor}]`}
-    style="
-      width: 270px;
-      height: 220px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 35px;
-      font-weight: bold;
-      text-align: center;
-      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    "
-  >
-    {imageText}
+      class={`hexagon bg-[${color}] text-[${textColor}]`}
+      style="
+        width: 270px;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      "
+    >
+      {imageText}
+    </div>
   </div>
-  
-
+  <div class={`md:hidden text-[${textColor}] text-3xl mb-7`}>
+    {imageText}
   </div>
   <div class="md:ml-8 text-center md:text-left">
     {
