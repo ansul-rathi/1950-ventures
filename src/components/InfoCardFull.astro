@@ -1,11 +1,13 @@
 ---
-const { imageText, description = [], color, textColor } = Astro.props;
+import { cn } from "../lib/utils";
+
+const { imageText, description = [], hexClass, textColor } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row items-center">
   <div class="hidden md:block hexagon-container mb-4 md:mb-0">
     <div
-      class={`hexagon bg-[${color}] text-[${textColor}]`}
+      class={hexClass}
       style="
         width: 270px;
         height: 220px;
@@ -21,13 +23,13 @@ const { imageText, description = [], color, textColor } = Astro.props;
       {imageText}
     </div>
   </div>
-  <div class={`md:hidden text-[${textColor}] text-3xl mb-7`}>
+  <div style={{color: textColor}} class={`md:hidden text-3xl mb-7`}>
     {imageText}
   </div>
   <div class="md:ml-8 text-center md:text-left">
     {
       description.map((item) => (
-        <div class={`text-xl lg:text-2xl mb-4 leading-7`} style={`color: ${textColor};`}>
+        <div class={`text-xl lg:text-2xl mb-4 leading-7`} style={{color: textColor}}>
           {item.title && (
             <span class="font-semibold italic mb-2 block">{item.title} :</span>
           )}
