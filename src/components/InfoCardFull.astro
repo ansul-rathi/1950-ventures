@@ -1,23 +1,21 @@
 ---
-const { imageText, description = [], color } = Astro.props;
+const { imageText, description = [], color, textColor } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row items-center">
   <div class="hexagon-container mb-4 md:mb-0">
     <div
-    class={`hexagon bg-[${color}]`}
+    class={`hexagon bg-[${color}] text-[${textColor}]`}
     style="
       width: 270px;
       height: 220px;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #ffffff; 
       font-size: 35px;
       font-weight: bold;
       text-align: center;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-      border: 2px solid #d1dfe7;
     "
   >
     {imageText}
@@ -28,7 +26,7 @@ const { imageText, description = [], color } = Astro.props;
   <div class="md:ml-8 text-center md:text-left">
     {
       description.map((item) => (
-        <div class="text-sm md:text-base lg:text-2xl mb-4 leading-7">
+        <div class={`text-xl lg:text-2xl mb-4 leading-7 text-[${textColor}]`}>
           {item.title && (
             <span class="font-semibold italic mb-2">{item.title} :</span>
           )}
