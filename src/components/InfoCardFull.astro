@@ -23,9 +23,9 @@ const { imageText, description = [], hexClass, textColor } = Astro.props;
       {imageText}
     </div>
   </div>
-  <div style={{color: textColor}} class={`md:hidden text-3xl mb-7`}>
-    {imageText}
-  </div>
+  
+  <h2 style={{color: textColor}} class="text-4xl md:hidden font-bold  mb-6">{imageText}</h2>
+
   <div class="md:ml-8 text-center md:text-left">
     {
       description.map((item) => (
