@@ -30,20 +30,27 @@ const data2 = [
   {
     title: 'Network',
     description:
-      "A broad network of relationships across sectors and geographies that provide access to an unmatched ecosystem of subject matter experts as well as peers.",
+      "A broad network of relationships across sectors and geographies and provide access to an unmatched ecosystem of subject matter experts as well as peers.",
   },
 ];
 
 const data3 = [
   {
     description:
-      "In 1950, Alan Turing in his seminal paper 'Computing Machinery and Intelligence' boldly asked, 'can machines think?'. Since then, the Turing Test has become a central concept in the field of Artificial Intelligence.",
+      "In 1950, Alan Turing in his seminal paper 'Computing Machinery and Intelligence' boldly asked, 'can machines think?'. Since then, the Turing Test has become a central concept in the field of Artificial Intelligence.".replace(
+        "then, the Turing",
+        "<span class='bg-blue-300'>then, the Turing</span>"
+      ),
   },
   {
     description:
-      "In 1950, the Indian Institutes of Technology were established with a motto to 'lead me from darkness to light' and set the foundations for engineering education in the country.",
+      "In 1950, the Indian Institutes of Technology were established with a motto to lead me from darkness to light and set the foundations for engineering education in the country.".replace(
+        "lead me from darkness to light",
+        "<span class='bg-blue-300'>'lead me from darkness to light'</span>"
+      ),
   },
 ];
+
 ---
 
 <Layout title="About">
@@ -55,7 +62,7 @@ const data3 = [
   </div>
 
   <div class="bg-[#005b96D9] w-full py-20">
-    <Container size="lg" >
+    <Container size="lg">
       <InfoCardFull description={data1} imageText="Who we are" color="#005b96" textColor="#ffffff"/>
     </Container>
   </div>

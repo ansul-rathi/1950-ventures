@@ -26,11 +26,11 @@ const { imageText, description = [], color, textColor } = Astro.props;
   <div class="md:ml-8 text-center md:text-left">
     {
       description.map((item) => (
-        <div class={`text-xl lg:text-2xl mb-4 leading-7 text-[${textColor}]`}>
+        <div class={`text-xl lg:text-2xl mb-4 leading-7`} style={`color: ${textColor};`}>
           {item.title && (
-            <span class="font-semibold italic mb-2">{item.title} :</span>
+            <span class="font-semibold italic mb-2 block">{item.title} :</span>
           )}
-          {item.description}
+          <span set:html={item.description}></span>
         </div>
       ))
     }
