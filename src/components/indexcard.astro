@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  bodyp1: string;
+  bodyp2: string;
+  bodyp3: string;
+}
+
+const { bodyp1, title, bodyp2, bodyp3 } = Astro.props;
+---
+
+<div class="flex w-full">
+  <div class="bg-red-600">
+    <h2>Who we are</h2>
+  </div>
+  <div class="bg-blue-500">
+    <p>
+      Our leadership team has over 125+ years of combined experience in
+      underwriting technology and mentoring businesses to commercialize and grow
+      globally.<br /> We have a clear understanding of what it takes to nurture and
+      grow deep-technology companies from idea to global scale, built through our
+      first-hand experience with AI businesses and insights from advising major corporates.
+    </p>
+  </div>
+</div>
+<div class="flex">
+  <div class="bg-yellow-500">
+    <h2>The value we bring</h2>
+  </div>
+  <div>
+    <p>
+      Growth: pragmatism and focus required for targeted business development
+      aligned to the sophisticated and protracted purchase cycles of corporates.<br
+      />
+      Scale: helping our founders navigate the complexities of scaling their operations
+      safely and efficiently in compliance with evolving regulatory requirements.
+      <br />Network: a broad network of relationships across sectors and
+      geographies and provide access to an unmatched ecosystem of subject matter
+      experts as well as peers.
+    </p>
+  </div>
+</div>
+<div class="flex">
+  <div class="bg-blue-700">
+    <h2>Why 1950</h2>
+  </div>
+  <div>
+    <p>
+      In 1950, Alan Turing in his seminal paper “Computing Machinery and
+      Intelligence” boldly asked, “can machines think?”. Since then, the Turing
+      Test has become a central concept in the field of Artificial Intelligence.
+      <br/>In 1950, the Indian Institutes of Technology were established with a motto
+      to “lead me from darkness to light” and set the foundations for
+      engineering education in the country.
+    </p>
+  </div>
+</div>
