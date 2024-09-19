@@ -65,3 +65,8 @@ footer.scrolled {
 .blend {
   @apply transition-all duration-300 ease-in-out;
 }
+
+terms {
+  @apply flex justify-center;
+  @apply bg-red-500;
+}
