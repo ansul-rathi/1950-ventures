@@ -1,4 +1,5 @@
 ---
+import Contactform from "../components/ContactForm.tsx";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -19,7 +20,8 @@ import Layout from "../layouts/Layout.astro";
     <div class="absolute top-0 left-0 w-full bg-gray-200 opacity-50"></div>
 
     <!-- Content -->
-    <div
+        <Contactform client:load />
+    <!-- <div
       class="relative container px-4 mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl z-10 sm:mt-10"
     >
       <form
@@ -66,6 +68,6 @@ import Layout from "../layouts/Layout.astro";
           >
         </div>
       </form>
-    </div>
+    </div> -->
   </section>
 </Layout>
